@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2034
 
-iso_name="archlinux"
+iso_name="avdandoe_$(date +%Y%m%d.%H%M).$(echo $RANDOM | md5sum | head -c 10; echo;)-dogfood"
 iso_label="ARCH_$(date +%Y%m)"
 iso_publisher="Arch Linux <https://archlinux.org>"
 iso_application="Arch Linux Live/Rescue CD"
