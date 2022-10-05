@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2034
 
-iso_name="avdandoe_$(date +%Y%m%d.%H%M).$(echo $RANDOM | md5sum | head -c 10; echo;)-dogfood"
+iso_name="avdanos_$(date +%Y%m%d.%H%M).$(echo $RANDOM | md5sum | head -c 10; echo;)_homemade-dogfood"
 iso_label="ARCH_$(date +%Y%m)"
-iso_publisher="Arch Linux <https://archlinux.org>"
-iso_application="Arch Linux Live/Rescue CD"
-iso_version="$(date +%Y.%m.%d)"
+iso_publisher="AvdanOS GNU/Linux <https://archlinux.org>"
+iso_application="AvdanOS GNU/Linux Live/Rescue CD"
+iso_version="0.1"
 install_dir="arch"
 buildmodes=('iso')
 bootmodes=('bios.syslinux.mbr' 'bios.syslinux.eltorito'
