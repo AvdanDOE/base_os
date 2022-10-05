@@ -31,4 +31,4 @@ jobs:
           echo "Uploading ISO..."
           ls out
           sleep 4
-          curl --upload-file $(ls out | grep .iso) https://transfer.sh/$(ls out | grep .iso)
+          curl --upload-file $(find out | grep .iso) https://transfer.sh/$(ls out | grep .iso)
