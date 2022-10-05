@@ -26,7 +26,9 @@ jobs:
         run: |
           mkarchiso -v .
           find out/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: avdanos_dogfood_rel
-          path: out/*.iso
+      - name: Upload ISO
+        run: |
+          echo "Uploading ISO..."
+          ls out
+          sleep 4
+          curl --upload-file $(ls out | grep .iso) https://transfer.sh/$(ls out | grep .iso)
