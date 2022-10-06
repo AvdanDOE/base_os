@@ -24,6 +24,7 @@ jobs:
           pacman --noconfirm -S git archiso
       - name: Build ISO File
         run: |
+          export OS_BRANCH=$(git rev-parse --abbrev-ref HEAD)
           mkarchiso -v .
           find out/
       - name: Upload ISO
