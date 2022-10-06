@@ -25,4 +25,5 @@ jobs:
       - name: Build ISO File
         run: |
           export OS_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+          export
           ls -la
