@@ -1,0 +1,28 @@
+name: Build ISO
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: archlinux:latest
+      options: --privileged
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Prepare pacman keyring
+        run: |
+          pacman-key --init
+          pacman --noconfirm -Sy archlinux-keyring
+      
+      - name: Install ArchISO
+        run: |
+          pacman -Sy
+          pacman --noconfirm -S git
+      - name: Build ISO File
+        run: |
+          export OS_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+          ls -la
