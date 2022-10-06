@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2034
 
-iso_name="avdanos_$(date +%Y%m%d.%H%M).$(echo $RANDOM | md5sum | head -c 10; echo;)_homemade-dogfood"
+if [ -n "$CI" ]; then
+   IMGNAME="_ci-roller"
+else
+   IMGNAME="_homemade"
+fi
+
+iso_name="avdanos_$(date +%Y%m%d.%H%M).$(echo $RANDOM | md5sum | head -c 10; echo;)${IMGNAME}"
 iso_label="ARCH_$(date +%Y%m)"
 iso_publisher="AvdanOS GNU/Linux <https://archlinux.org>"
 iso_application="AvdanOS GNU/Linux Live/Rescue CD"
