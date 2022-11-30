@@ -25,7 +25,9 @@ jobs:
       - name: Build ISO File
         run: |
           export OS_BRANCH=$(git rev-parse --abbrev-ref HEAD)
-          mkarchiso -v .
+          cp mkarchiso-doe /usr/bin
+          chmod +x /usr/bin/mkarchiso-doe
+          mkarchiso-doe -v .
           find out/
       - name: Upload ISO
         run: |
