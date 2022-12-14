@@ -29,6 +29,7 @@ exfatprogs
 f2fs-tools
 fatresize
 fsarchiver
+firefox
 gnu-netcat
 gpart
 gpm
@@ -78,6 +79,7 @@ open-vm-tools
 openconnect
 openssh
 openvpn
+pamixer
 partclone
 parted
 partimage
