@@ -2,7 +2,7 @@
 # shellcheck disable=SC2034
 
 if [ -n "$CI" ]; then
-   IMGNAME="_ci-roller"
+   IMGNAME="_preview"
 else
    IMGNAME="_homemade"
 fi
