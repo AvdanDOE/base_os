@@ -5,6 +5,8 @@ archinstall
 b43-fwcutter
 base
 bind
+bluez
+bluez-utils
 brltty
 broadcom-wl
 btrfs-progs
